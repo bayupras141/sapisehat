@@ -1,0 +1,16 @@
+.icon {
+    height: 50px;
+    width: 50px;
+}
+.icon-mini {
+    height: 25px;
+    width: 25px;
+}
+
+.grayscale {
+    filter: brightness(0) invert(.4);
+}
+
+.invert {
+    filter: brightness(0) invert(1);
+}
