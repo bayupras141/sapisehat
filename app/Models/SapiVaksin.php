@@ -10,7 +10,7 @@ class SapiVaksin extends Model
     use HasFactory;
 
     const LIST_VAKSIN = [
-        0 => "VAKSIN ALPURINOL",
+        0 => "VAKSIN A",
         1 => "VAKSIN B",
         2 => "VAKSIN C",
     ];

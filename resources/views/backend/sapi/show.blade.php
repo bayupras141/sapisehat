@@ -68,21 +68,14 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="grafik-tab" data-toggle="tab" data-target="#grafik"
                                 type="button" role="tab" aria-controls="grafik" aria-selected="false">
-                                <i class="fas fa-chart-line"></i> Tabel
+                                <i class="fas fa-chart-line"></i> Grafik
                             </button>
                         </li>
-                        <!-- <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="tabel-tab" data-toggle="tab" data-target="#tabel"
-                                type="button" role="tab" aria-controls="tabel" aria-selected="false">
-                                <i class="fas fa-chart"></i> Tabel
-                            </button>
-                        </li> -->
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         @include('backend.sapi.catatan.index')
                         @include('backend.sapi.vaksin.index')
                         @include('backend.sapi.grafik.index')
-                        <!-- @include('backend.sapi.tabel.index') -->
                     </div>
                     @include('backend.sapi.catatan.create')
                     @include('backend.sapi.vaksin.create')

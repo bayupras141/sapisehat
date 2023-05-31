@@ -38,7 +38,7 @@ class SapiController extends Controller
         $request->request->add(['user_id' => $user->id]);
 
         // check device_id
-        $device = Device::exist($request->device);
+        $device = Device::exist('device_id', $request->device);
         if (!$device) {
             return redirect()->back()->withErrors(['device_id' => 'Device Tidak Ditemukan']);
         } else if (!$device->available) {

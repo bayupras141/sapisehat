@@ -42,12 +42,12 @@ Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Auth'], f
 });
 
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'administrator', 'namespace' => 'App\Http\Controllers\Backend', 'as' => 'backend.'], function () {
+Route::group(['prefix' => 'administrator', 'namespace' => 'App\Http\Controllers\Backend', 'as' => 'backend.'], function () {
     Route::get('/', function () {
         return view('backend.dashboard');
     })->name('dashboard');
 
-    Route::group([], function () {
+    Route::group(['middleware' => 'admin'], function () {
         Route::resource('/user', 'UserController');
         Route::resource('/device', 'DeviceController', [
             "except" => ["show"]

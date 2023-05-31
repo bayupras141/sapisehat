@@ -38,8 +38,8 @@
                         <li class="active" id="firstLink"><a href="#home" class="scroll-link">Home</a></li>
                         <li><a href="#Features" class="scroll-link">Fitur</a></li>
                         <li><a href="#aboutUs" class="scroll-link">Tentang Kami</a></li>
-                        <!-- <li><a href="#team" class="scroll-link">Team</a></li>
-                        <li><a href="{{ route('backend.dashboard') }}" class="scroll-link">ADMIN</a></li> -->
+                        <li><a href="#team" class="scroll-link">Team</a></li>
+                        <li><a href="{{ route('backend.dashboard') }}" class="scroll-link">ADMIN</a></li>
                     </ul>
                 </div>
                 <!--/.navbar-collapse-->

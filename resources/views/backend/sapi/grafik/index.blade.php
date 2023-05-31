@@ -2,53 +2,22 @@
     $keys = [];
     $values = [];
     
-    $data = $sapi
-        ->records()
-        ->orderBy('created_at', 'DESC')
-        ->limit(100)
-        ->get();
+    $data = $sapi->records()->orderBy('created_at', 'DESC')->limit(100)->get();
     
     foreach ($data as $value) {
         $keys[] = \App\Helpers\Formatter::datetime($value->created_at);
         $values[] = $value->value;
     }
-    
+
     $keys = array_reverse($keys);
     $values = array_reverse($values);
 @endphp
 <div class="tab-pane fade pt-4" id="grafik" role="tabpanel" aria-labelledby="grafik-tab">
     <div class="mt-3">
-        <!-- <p class="p-2">
+        <p class="p-2">
             Menampilkan 100 data terakhir(bila ada) sebagai grafik
         </p>
-        <canvas id="myChart"></canvas> -->
-
-        <table class="table table-hover table-striped">
-            <thead>
-                <td>#</td>
-                <td>Image</td>
-                <td>Tingkat Confidence Hasil</td>
-                <td>Timestamp</td>
-            </thead>
-            <tbody>
-                @foreach ($data as $item)
-                    <tr>
-                        <td>
-                            {{ $loop->index + 1 }}
-                        </td>
-                        <td>
-                            <img src="{{ asset($item->image) }}" alt="Data Sapi" srcset="" class="img img-fluid" style="max-width:75px">
-                        </td>
-                        <td>
-                            {{ $item->value }}
-                        </td>
-                        <td>
-                            {{ $item->created_at }}
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <canvas id="myChart"></canvas>
     </div>
 </div>
 
