@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 })->name('home');
 
 Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Auth'], function () {
@@ -42,12 +42,12 @@ Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Auth'], f
 });
 
 
-Route::group(['prefix' => 'administrator', 'namespace' => 'App\Http\Controllers\Backend', 'as' => 'backend.'], function () {
+Route::group(['middleware' => ['auth'], 'prefix' => 'administrator', 'namespace' => 'App\Http\Controllers\Backend', 'as' => 'backend.'], function () {
     Route::get('/', function () {
         return view('backend.dashboard');
     })->name('dashboard');
 
-    Route::group(['middleware' => 'admin'], function () {
+    Route::group([], function () {
         Route::resource('/user', 'UserController');
         Route::resource('/device', 'DeviceController', [
             "except" => ["show"]

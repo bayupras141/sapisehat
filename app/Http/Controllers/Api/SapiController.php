@@ -21,7 +21,7 @@ class SapiController extends Controller
         $validate = Validator::make($request->all(), [
             "image" => "required|string",
             "value" => "required|numeric",
-            "device_id" => "required|numeric",
+            "device_id" => "required",
         ]);
 
         if ($validate->fails()) {
